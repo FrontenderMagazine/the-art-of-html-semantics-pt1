@@ -37,12 +37,11 @@ How about the humble [paragraph element][4]?
 > The p element should not be used when a more specific element is more
 > appropriate. The following example is technically correct:
 >
-> ```html
-<section>
-    <p>Last modified: 2001-04-23</p>
-    <p>Author: fred@example.com</p>
-></section>
-```
+>     <section>
+>       <p>Last modified: 2001-04-23</p>
+>       <p>Author: fred@example.com</p>
+>     </section>
+>
 > However, it would be better marked-up as:
 >
 >
