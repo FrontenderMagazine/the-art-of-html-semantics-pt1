@@ -4,10 +4,8 @@ with the marks we’ve made.
 There is `section`, `header`, `aside`, `footer`, `main`, and even `menu`!
 We’ve got everything we need right? Then why are we still doing things like this?
 
-```html
-<body class="article">
-<div class="content">
-```
+    <body class="article">
+    <div class="content">
 
 Being guilty of this at times while laziness or deadlines got the better of me,
 I decided to reacquiant myself with the intended uses of our
@@ -44,25 +42,19 @@ How about the humble [paragraph element][4]?
 >
 > However, it would be better marked-up as:
 >
->
-> ```html
-<section>
-    <footer>Last modified: 2001-04-23</footer>
-    <address>Author: fred@example.com</address>
-</section>
-```
+>     <section>
+>       <footer>Last modified: 2001-04-23</footer>
+>       <address>Author: fred@example.com</address>
+>     </section>
 >
 > Or:
 >
-> ```html
-<section>
-    <footer>
-        <p>Last modified: 2001-04-23</p>
-        <address>Author: fred@example.com</address>
-    </footer>
-</section>
-```
-
+>     <section>
+>       <footer>
+>         <p>Last modified: 2001-04-23</p>
+>         <address>Author: fred@example.com</address>
+>       </footer>
+>     </section>
 
 Ok, less impressive, but the more appropriate applications of the `footer` and
 `address` tags is cool. Thinking I knew all there was to know about paragraph
@@ -75,8 +67,8 @@ semantics, I saw this note in the spec.
 
     <p>For instance, this fantastic sentence has bullets relating to</p>
     <ul><li>wizards,
-        <li>faster-than-light travel, and
-        <li>telepathy,</ul>
+      <li>faster-than-light travel, and
+      <li>telepathy,</ul>
     <p>and is further discussed below.</p>
 
 In other words, “[there is no spoon][5]”.
@@ -89,7 +81,7 @@ sectioning roots,[does *not* exist][6].
 > Is a concept that lives in the HTML specification, but is essentially a
 > fiction in the real world. It is a fiction because user agents have not
 > implemented it and there is no indication that any will.
->- [Steve Faulkner][7]
+> - [Steve Faulkner][7]
 
 To be honest, it’s kind of a relief to hear this, because I never felt
 comfortable or totally grasped the concept of multiple`h1` or `h2` elements on
@@ -153,14 +145,14 @@ to demo a code snippet marked up with `figure`.
     <p>In <a href="#l4">listing</a> we see the primary core interface
     > API declaration.</p>
     <figure id="l4">
-        <figcaption>Listing 4. The primary core interface API declaration.</figcaption>
-        
-        interface PrimaryCore {
-            boolean verifyDataLine();
-            void sendData(in sequence&lt;byte> data);
-            void initSelfDestruct();
-        }
-        
+      <figcaption>Listing 4. The primary core interface API declaration.</figcaption>
+      
+      interface PrimaryCore {
+        boolean verifyDataLine();
+        void sendData(in sequence<byte> data);
+        void initSelfDestruct();
+      }
+      
     </figure>
     <p>The API is designed to use UTF-8.</p>
 
@@ -184,11 +176,11 @@ definitions). Here’s a great example from the spec, marking up variations in
 spelling across the English language, though the definition is the same.
 
     <dl>
-        <dt lang="en-US"> <dfn>color</dfn> </dt>
-        <dt lang="en-GB"> <dfn>colour</dfn> </dt>
-        <dd> A sensation which (in humans) derives from the ability of
-        the fine structure of the eye to distinguish three differently
-        filtered analyses of a view. </dd>
+      <dt lang="en-US"> <dfn>color</dfn> </dt>
+      <dt lang="en-GB"> <dfn>colour</dfn> </dt>
+      <dd> A sensation which (in humans) derives from the ability of
+      the fine structure of the eye to distinguish three differently
+      filtered analyses of a view. </dd>
     </dl>
 
 Astute readers and fellow HTML nerds may be wondering about the rarely-seen
