@@ -37,23 +37,23 @@
 > узкоспециализированные элементы. Следующий пример технически корректен:
 >
 >     <section>
->       <p>Last modified: 2001-04-23</p>
->       <p>Author: fred@example.com</p>
+>       <p>Последнее изменение: 2001-04-23</p>
+>       <p>Автор: fred@example.com</p>
 >     </section>
 >
 > Однако, это было бы лучше разметить как:
 >
 >     <section>
->       <footer>Last modified: 2001-04-23</footer>
->       <address>Author: fred@example.com</address>
+>       <footer>Последнее изменение: 2001-04-23</footer>
+>       <address>Автор: fred@example.com</address>
 >     </section>
 >
 > Или:
 >
 >     <section>
 >       <footer>
->         <p>Last modified: 2001-04-23</p>
->         <address>Author: fred@example.com</address>
+>         <p>Последнее изменение: 2001-04-23</p>
+>         <address>Автор: fred@example.com</address>
 >       </footer>
 >     </section>
 
@@ -66,70 +66,74 @@
 > абзацев, как определяется в этой спецификации: один перед списком, по одному
 > на каждый элемент и один после списка.
 
-    <p>For instance, this fantastic sentence has bullets relating to</p>
-    <ul><li>wizards,
-      <li>faster-than-light travel, and
-      <li>telepathy,</ul>
-    <p>and is further discussed below.</p>
+    <p>К примеру, это фантастическое предложение содержит пункты про</p>
+    <ul><li>колдунов,
+      <li>перемещение быстрее скорости света и
+      <li>телепатию,</ul>
+    <p>и подробнее рассматривается ниже.</p>
 
 Другими словами, «[нет никакой ложки][5]».
 
-## The single h1-h6 model
+## Сквозная модель h1-h6
 
-The HTML5 Document Outline, that allows for multiple `h1-h6` tags based on
-sectioning roots,[does *not* exist][6].
+План документа (Document Outline), введённый в HTML5 и позволяющий
+использовать несколько тегов `h1`—`h6`, основываясь на разделении документа на
+разделы, [*не* существует][6].
 
-> Is a concept that lives in the HTML specification, but is essentially a
-> fiction in the real world. It is a fiction because user agents have not
-> implemented it and there is no indication that any will. - [Steve Faulkner][7]
+> Это принцип, который живёт в спецификации HTML, но по сути является
+> фикцией в реальном мире. Это фикция потому что в браузерах он не
+> воплощен, и нет никакого намёка, что когда-нибудь будет. — [Стив Фолкнер][7] 
 
-To be honest, it’s kind of a relief to hear this, because I never felt
-comfortable or totally grasped the concept of multiple`h1` or `h2` elements on
-a page. It quickly became unweildy when trying to remember which elements began
-a new [section context][8], and how many header elements I’d already used.
-Cheers for keeping things simple.
+Честно говоря, для меня слышать такое — это своего рода облегчение, потому как
+мне никогда не казалась удобной или понятной концепция множественных элементов
+`h1` или `h2` на странице. Чувство неуклюжести быстро нарастало при попытках
+вспомнить, какие из элементов начинают новый [контекст раздела][8], и сколько
+заголовков я уже использовал. Простота — это здорово.
 
-## Marking up documentation
+## Разметка документации
 
-As I’m currently doing research on developer documentation, I thought I’d
-look into`pre` and `code` tags, to be sure I was using them correctly. `code`
-for inline references, like in this paragraph, and`pre` for longer,
-`blockquote`-style code embeds.
+Я сейчас занимаюсь исследованиями в области документации для разработчиков,
+и мне захотелось взглянуть на теги `pre` и `code`, чтобы убедиться, что я
+правильно их использую. `code` для ссылок внутри предложения, как например
+внутри этого, и `pre` для длинных кусков кода наподобие `blockquote`.
 
-Well, those assumptions are mostly true, but as we’ve seen, there is usually
-a better, more meaningful element to use. What I found was another pair of
-elements that were specifically created for code documentation,[`kbd`][9] and
-[`samp`][10]. Why these tags are so special to me is that they solve 2 problems:
+Что ж, эти допущения оказались в основном верными, но как я увидел, обычно
+удаётся подобрать более подходящие и более выразительные элементы.
+Я обнаружил ещё пару элементов, которые были специально созданы для
+документации кода, [`kbd`][9] и [`samp`][10]. Для меня они особенно значимы,
+потому что решают две задачи:
 
-*   I can now use a semantic element to distinguish between code that the user
-    should enter
-    (`kbd`) and code that a machine outputs (`samp`).
+*   Теперь я при помощи семантики элемента могу разделять код, который
+    пользователь должен ввести (`kbd`), и код, который машина ему выведет
+    (`samp`).
 
-*   I now have 2 separate CSS hooks to use to help visually distinguish these
-    two pieces of information in documentation.
+*   Теперь я могу указывать различные стили в CSS, чтобы визуально различать
+    в документации эти куски информации.
 
-I’d never seen those applied to documentation markup before, but now I can’t
-imagine not using them.
+Я раньше никогда их не встречал в разметке документации, но теперь я просто
+не могу представить, чтобы я их не использовал.
 
-## Code granularity
+## Детализация кода
 
-If we want to get really descriptive, there are a couple more elements we can
-leverage for both machine and human-readable code markup.
+Если мы хотим быть действительно выразительными, то есть ещё парочка
+элементов, которые мы можем использовать, чтобы сделать разметку более
+читаемой как для людей, так и для машин.
 
-The [`var`][11] tag can be used for marking up variables in code, and the
-[`data`][12] element is used to delineate pure data, such as the values needed
-in tabular information.
+Тег [`var`][11] можно использовать для разметки переменных в коде, а элемент
+[`data`][12] для описания чистых данных, например, значений в табличном виде.
 
-You might be asking what the `data` element offers over `data-*` attributes.
-With the`data` element’s `value` attribute present, browsers will someday be
-able to use it with the[`sortable`][13] attribute of the `table` element to
-provide a mechanism for authors and users to[sort tables][14].
+Вы можете поинтересоваться, какие же премущества дают элементы `data` перед
+атрибутами `data-*`. `data` можно установить атрибут `value`, и
+когда-нибудь браузеры научатся использовать его совместно с атрибутом
+[`sortable`][13] элемента `table`, предоставляя авторам и пользователям
+механизм [сортировки таблиц][14].
 
-*Note:* Browser support for the table sorting model very hard to come by, and
-I've yet to see a working example. Plus, the HTML 5.1 DOM API spec on it is kind
-of a mess, but when it does make it into in the wild, make sure you add the
-[`aria-sort`][15] role to the appropriate table header element. (Thanks to
-[Ray Camden][16] for shedding some light.)
+**Примечание:** Что касается поддержки браузерами сортировки таблиц, то тут
+есть большие пробуксовки, и я пока не видел ни одного рабочего примера.
+К тому же, раздел спецификации API DOM в HTML 5.1, посвященный этому,— 
+это сплошная каша. Но когда это появится в браузерах, не забудьте указать
+роли [`aria-sort`][15] нужным элементам заголовка таблицы. (Спасибо
+[Рею Камдену][16] за ликбез.)
 
 Another highly useful element in code documentation semantics is the `figure`
 element, and it can be used for much more than screenshots.
