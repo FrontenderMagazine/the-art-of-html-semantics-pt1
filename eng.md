@@ -80,8 +80,7 @@ sectioning roots,[does *not* exist][6].
 
 > Is a concept that lives in the HTML specification, but is essentially a
 > fiction in the real world. It is a fiction because user agents have not
-> implemented it and there is no indication that any will.
-> - [Steve Faulkner][7]
+> implemented it and there is no indication that any will. - [Steve Faulkner][7]
 
 To be honest, it’s kind of a relief to hear this, because I never felt
 comfortable or totally grasped the concept of multiple`h1` or `h2` elements on
@@ -125,10 +124,10 @@ With the`data` element’s `value` attribute present, browsers will someday be
 able to use it with the[`sortable`][13] attribute of the `table` element to
 provide a mechanism for authors and users to[sort tables][14].
 
-**Note:** Browser support for the table sorting model very hard to come by, and
+*Note:* Browser support for the table sorting model very hard to come by, and
 I've yet to see a working example. Plus, the HTML 5.1 DOM API spec on it is kind
 of a mess, but when it does make it into in the wild, make sure you add the
-[`aria-sort`][15] role to the appropriate table header element. (Thanks to 
+[`aria-sort`][15] role to the appropriate table header element. (Thanks to
 [Ray Camden][16] for shedding some light.)
 
 Another highly useful element in code documentation semantics is the `figure`
