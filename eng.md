@@ -4,9 +4,10 @@ with the marks we’ve made.
 There is `section`, `header`, `aside`, `footer`, `main`, and even `menu`!
 We’ve got everything we need right? Then why are we still doing things like this?
 
-    <body class="article">
-    <div class="content">
-
+```html
+<body class="article">
+<div class="content">
+```
 
 Being guilty of this at times while laziness or deadlines got the better of me,
 I decided to reacquiant myself with the intended uses of our
@@ -36,26 +37,32 @@ How about the humble [paragraph element][4]?
 > The p element should not be used when a more specific element is more
 > appropriate. The following example is technically correct:
 >
->    <section>
->        <p>Last modified: 2001-04-23</p>
->        <p>Author: fred@example.com</p>
->    </section>
->
+> ```html
+<section>
+    <p>Last modified: 2001-04-23</p>
+    <p>Author: fred@example.com</p>
+></section>
+```
 > However, it would be better marked-up as:
 >
->    <section>
->        <footer>Last modified: 2001-04-23</footer>
->        <address>Author: fred@example.com</address>
->    </section>
+>
+> ```html
+<section>
+    <footer>Last modified: 2001-04-23</footer>
+    <address>Author: fred@example.com</address>
+</section>
+```
 >
 > Or:
 >
->    <section>
->        <footer>
->            <p>Last modified: 2001-04-23</p>
->            <address>Author: fred@example.com</address>
->        </footer>
->    </section>
+> ```html
+<section>
+    <footer>
+        <p>Last modified: 2001-04-23</p>
+        <address>Author: fred@example.com</address>
+    </footer>
+</section>
+```
 
 
 Ok, less impressive, but the more appropriate applications of the `footer` and
