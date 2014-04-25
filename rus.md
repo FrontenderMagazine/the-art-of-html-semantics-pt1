@@ -135,21 +135,20 @@
 роли [`aria-sort`][15] нужным элементам заголовка таблицы. (Спасибо
 [Рею Камдену][16] за ликбез.)
 
-Another highly useful element in code documentation semantics is the `figure`
-element, and it can be used for much more than screenshots.
+Другой крайне полезный элемент для семантики документации кода — `figure`,
+и он может использоваться для чего-то большего, чем просто скриншоты.
 
-> The figure element represents some flow content, optionally with a caption,
-> that is self-contained (like a complete sentence) and is typically referenced as
-> a single unit from the main flow of the document.
+> Элемент figure представляет собой поток содержимого, возможно содержащий
+> подпись, который самодостаточен (вроде завершённого предложения) и обычно
+> упоминается как единое целое из основного потока документа.
 
+Обратите внимания, ни слова про изображения. Далее в спеке идёт пример,
+кусок кода, размеченный с `figure`.
 
-Notice nothing about images specifically was mentioned. The spec then goes on
-to demo a code snippet marked up with `figure`.
-
-    <p>In <a href="#l4">listing</a> we see the primary core interface
-    > API declaration.</p>
+    <p>В <a href="#l4">листинге</a> мы можем увидеть описание базового
+    интерфейса API.</p>
     <figure id="l4">
-      <figcaption>Listing 4. The primary core interface API declaration.</figcaption>
+      <figcaption>Листинг 4. Описание базового интерфейса API.</figcaption>
       
       interface PrimaryCore {
         boolean verifyDataLine();
@@ -158,26 +157,25 @@ to demo a code snippet marked up with `figure`.
       }
       
     </figure>
-    <p>The API is designed to use UTF-8.</p>
+    <p>Это API требует использования UTF-8.</p>
 
+Ого! Это вполне толково, не правда ли? Подумайте, сколько книг вы прочитали,
+в которых были такие [маленькие элементы figure][17] с краю страницы,
+поясняющие кусок кода.
 
-Wow, that totally makes sense, doesn’t it? Think about how many books you’
-ve read that have[this little figure element][17] off to the side to point out
-a detail about a code snippet.
+## Списки описаний: незаметные рабочие лошадки
 
-## Description Lists: the unsung workhorses
-
-My favorite HTML element, and in my opinion, the most underrated element in the
-spec, is the decription list
-([`dl`][18]). It’s intended for marking up name-value pairs of content. This
-could apply to anything from a list of services offered and their accompanying
-descriptions, to a simple ‘previous article/next article’ component, like the
-one at the bottom of every article on my blog here. It’s perfect for documenting
-a page’s edit history, causes and effects, or, surprisingly, any list data that
-needs a group heading. I had no idea before reading the spec, but it’s entirely
-valid to have one`dt` (decription term) and multiple `dd`s (description
-definitions). Here’s a great example from the spec, marking up variations in
-spelling across the English language, though the definition is the same.
+Мой любимый элемент HTML и, по моему мнению, самый недоценённый элемент в
+спецификации — список описаний ([`dl`][18]). Он предназначен для разметки
+пар имя—значение в содержимом. Это понятие может включать в себя всё, от
+списка предлагаемых услуг и их описаний до простого компонента «предыдущая
+статья / следующая статья», как внизу каждой страницы моего блога. Этот
+элемент идеально подходит для документирования истории правок страницы,
+причин и следствий, или, на удивление, вообще любого списка, в котором
+используется группировка с заголовками. До прочтения спецификации я даже не
+догадывался, что, оказывается, вполне допустимо имень один `dt` (термин) и
+несколько `dd` (определений). Вот отличный пример из спеки, указаны различные
+произношения, хотя определение одно и то же.
 
     <dl>
       <dt lang="en-US"> <dfn>color</dfn> </dt>
@@ -187,42 +185,46 @@ spelling across the English language, though the definition is the same.
       filtered analyses of a view. </dd>
     </dl>
 
-Astute readers and fellow HTML nerds may be wondering about the rarely-seen
-[`dfn`][19] element and where it fits into the semantic uses of description
-lists. A`dfn` is the element the spec describes as: “the defining instance of
-a term”. In combination with the`abbr` and `a` elements, one can provide a
-really nice UX for finding the first instance of a definiton. See this example
-from the spec:
+Проницательные читатели и знатоки HTML могут поинтерсоваться насчёт редко
+применяемого элемента [`dfn`][19] и о том, как он вписывается в семантику
+списков описаний. `dfn` спецификация описывает так: «определяеющее вхождение
+термина». В сочетании с элементами `abbr` и `a` он может значительно облегчить
+читателю задачу поиска первого появления термина в тексте. Вот пример из
+спецификации:
 
-> In the following fragment, the term “Garage Door Opener” is first defined
-> in the first paragraph, then used in the second. In both cases, its abbreviation
-> is what is actually displayed.
+> В следующем открывке термин «устройство открывания гаражных ворот» впервые
+> определяется в первом предложении, затем используется во втором. В обоих
+> случаях фактически отображается его аббревиатура
 
-    <p>The <dfn><abbr title="Garage Door Opener">GDO</abbr></dfn>
-    is a device that allows off-world teams to open the iris.</p>
-    <!-- ... later in the document: -->
-    <p>Teal'c activated his <abbr title="Garage Door Opener">GDO</abbr>
-    and so Hammond ordered the iris to be opened.</p>
-    With the addition of an a element, the reference can be made explicit:
-    
-    <p>The <dfn id=gdo><abbr title="Garage Door Opener">GDO</abbr></dfn>
-    is a device that allows off-world teams to open the iris.</p>
-    <!-- ... later in the document: -->
-    <p>Teal'c activated his <a href=#gdo><abbr title="Garage Door Opener">GDO</abbr></a>
-    and so Hammond ordered the iris to be opened.</p>
+    <p><dfn><abbr title="устройство открывания гаражных ворот">УОГВ</abbr></dfn> —
+    это устройство, позволяющее командам исследователей открывать ирисовую
+    диафрагму.</p>
+    <!-- ... далее в документе: -->
+    <p>Тил'к активировал своё
+    <abbr title="устройство открывания гаражных ворот">УОГВ</abbr>,
+    и Хаммонд отдал команду открыть диафрагму.</p>
 
+> С использованием элемента a ссылку можно сделать явной:
 
-If you’ve ever read an ebook that has footnote or index functionality, this
-is exactly the same idea.
+    <p><dfn id=gdo><abbr title="устройство открывания гаражных ворот">GDO</abbr></dfn> —
+    это устройство, позволяющее командам исследователей открывать ирисовую
+    диафрагму.</p>
+    <!-- ... далее в документе: -->
+    <p>Тил'к активировал своё
+    <a href=#gdo><abbr title="устройство открывания гаражных ворот">УОГВ</abbr></a>,
+    и Хаммонд отдал команду открыть диафрагму.</p>
 
-## Just the beginning
+Если вы когда-нибудь читали электронную книгу, в которой был механизм сносок
+или оглавления, то это точно то же самое.
 
-While there is still [work to be done][20] on the available semantics and
-appropriate uses of markup, it’s nice to know that we have more to work with
-than we sometimes allow ourselves to believe.
+## Это только начало
 
-In my next post, we’ll dive deeper into the HTML of tomorrow, and what it
-would look like if it were designed today.
+Хотя предстоит ещё [много работы][20] над доступной семантикой и правилами
+применения разметки, приятно осознавать, что в нашем распоряжении уже есть
+больше, чем мы могли бы себе представлять.
+
+С следующей статье мы погрузимся в HTML завтрашнего дня и то, как бы он мог
+выглядеть, если бы разрабатывался сегодня.
 
  [1]: https://developer.mozilla.org/en-US/docs/Web/HTML
  [2]: http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-div-element
