@@ -45,20 +45,20 @@
      </section>
  
 > Однако, это было бы лучше разметить как:
-> 
->      <section>
->          <footer>Последнее изменение: 2001-04-23</footer>
->          <address>Автор: fred@example.com</address>
->      </section>
-> 
+
+     <section>
+         <footer>Последнее изменение: 2001-04-23</footer>
+         <address>Автор: fred@example.com</address>
+     </section>
+
 > Или:
 >
->     <section>
->       <footer>
->         <p>Последнее изменение: 2001-04-23</p>
->         <address>Автор: fred@example.com</address>
->       </footer>
->     </section>
+    <section>
+        <footer>
+            <p>Последнее изменение: 2001-04-23</p>
+            <address>Автор: fred@example.com</address>
+        </footer>
+    </section>
 
 Ладно, это не так впечатляет, но всё же, применение более подходящих тегов
 `footer` и `address` — это круто. Считая, что я уже знаю всё, что только можно
