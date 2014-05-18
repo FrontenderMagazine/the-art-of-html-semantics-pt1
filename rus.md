@@ -232,7 +232,7 @@
  [4]: http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-p-element
  [5]: http://www.youtube.com/watch?v=XO0pcWxcROI
  [6]: http://blog.paciellogroup.com/2013/10/html5-document-outline/
- [7]: http://kevinsuttle.com/posts/the-art-of-html-semantics-pt1/twitter.com/stevefaulkner
+ [7]: https://twitter.com/stevefaulkner
  [8]: http://www.w3.org/TR/html5/sections.html#outlines
  [9]: http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#the-kbd-element
 
